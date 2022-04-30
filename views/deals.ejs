@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deals</title>
+</head>
+<body>
+    <h2>
+        Deals on Groceries :
+    </h2>
+    <p>
+        <!-- <ul>
+            <% var products=[ { id: 1, name: 'Deal 1' , percentage: 'Discount : 10%' , description: 'This is deal is for Gold Customers' }, { id:
+            2, name: 'Deal 2' , percentage: 'Discount : 20%' , description: 'This is deal is for Silver Customers' }, { id: 3,
+                name: 'Deal 3' , percentage: 'Discount : 30%' , description: 'This is deal is for Platinum Customers' } ]; %>
+            <% products.forEach(function(product) { %>
+                <li>
+                    <h3>
+                        <a href="/groceries">
+                            <%= product.name %>
+                        </a>
+                    </h3>  
+                    <p>
+                        <%= product.percentage %>
+                    </p>
+                    <p>
+                        <b><%= product.description %></b>
+                    </p>
+                </li>
+            <% }) %>
+        </ul> -->
+        <ul>
+            <% if(result[0].length> 0){ %>
+                <% result[0].forEach( result=> { %>
+                    <li>
+                        <h3>
+                            <a href="/<%= result.ProductID %>">Product Name: <%= result.ProductName.substring(13) %></a>
+                        </h3>
+                        <p>Discount Percentage: <%= result.Percentage %>
+                        </p>
+                        <p>Offer Date: <%= result.Offer_Date.toString().substring(0, 15) %>
+                        </p>
+                        <p>This Deal is For: <b><%= result.Membership %></b> Customers
+                        </p>
+                    </li>
+                <% }) %>
+            <% }else { %>
+                <p>No results</p>
+            <% } %>
+        </ul>
+    </p>
+    <hr>
+    <h2>
+        Deals on Clothing :
+    </h2>
+    <p>
+        <!-- <ul>
+            <% var products=[ { id: 1, name: 'Deal 1' , percentage: 'Discount : 10%' , description: 'This is deal is for Gold Customers' }, { id:
+            2, name: 'Deal 2' , percentage: 'Discount : 20%' , description: 'This is deal is for Silver Customers' }, { id: 3,
+                name: 'Deal 3' , percentage: 'Discount : 30%' , description: 'This is deal is for Platinum Customers' } ]; %>
+            <% products.forEach(function(product) { %>
+                <li>
+                    <h3>
+                        <a href="/clothing">
+                            <%= product.name %>
+                        </a>
+                    </h3>
+                    <p>
+                        <%= product.percentage %>
+                    </p>
+                    <p>
+                        <b><%= product.description %></b>
+                    </p>
+                </li>
+            <% }) %>
+        </ul> -->
+        <ul>
+            <% if(result[1].length> 0){ %>
+                <% result[1].forEach( result=> { %>
+                    <li>
+                        <h3>
+                            <a href="/<%= result.ProductID %>">Product Name: <%= result.ProductName.substring(13) %></a>
+                        </h3>
+                        <p>Discount Percentage: <%= result.Percentage %>
+                        </p>
+                        <p>Offer Date: <%= result.Offer_Date.toString().substring(0, 15) %>
+                        </p>
+                        <p>This Deal is For: <b><%= result.Membership %></b> Customers
+                        </p>
+                    </li>
+                    <% }) %>
+                        <% }else { %>
+                            <p>No results</p>
+                            <% } %>
+        </ul>
+    </p>
+    <hr>
+    <h2>
+        Deals on Electronics :
+    </h2>
+    <p>
+        <!-- <ul>
+            <% var products=[ { id: 1, name: 'Deal 1' , percentage: 'Discount : 10%' , description: 'This is deal is for Gold Customers' }, { id:
+            2, name: 'Deal 2' , percentage: 'Discount : 20%' , description: 'This is deal is for Silver Customers' }, { id: 3,
+                name: 'Deal 3' , percentage: 'Discount : 30%' , description: 'This is deal is for Platinum Customers' } ]; %>
+            <% products.forEach(function(product) { %>
+                <li>
+                    <h3>
+                        <a href="/electronics">
+                            <%= product.name %>
+                        </a>
+                    </h3>
+                    <p>
+                        <%= product.percentage %>
+                    </p>
+                    <p>
+                        <b><%= product.description %></b>
+                    </p>
+                </li>
+            <% }) %>
+        </ul> -->
+        <ul>
+            <% if(result[2].length> 0){ %>
+                <% result[2].forEach( result=> { %>
+                    <li>
+                        <h3>
+                            <a href="/<%= result.ProductID %>">Product Name: <%= result.ProductName.substring(13) %></a>
+                        </h3>
+                        <p>Discount Percentage: <%= result.Percentage %>
+                        </p>
+                        <p>Offer Date: <%= result.Offer_Date.toString().substring(0, 15) %>
+                        </p>
+                        <p>This Deal is For: <b><%= result.Membership %></b> Customers
+                        </p>
+                    </li>
+                    <% }) %>
+                        <% }else { %>
+                            <p>No results</p>
+                            <% } %>
+        </ul>
+    </p>
+    <hr>
+</body>
+</html>

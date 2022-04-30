@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs') %>
+    <body>
+        <% if(orders.length > 0){ %>
+            <% orders.forEach( orders => { %>
+                    <div class = "product">
+                        <p>Product ordered: <%= orders.ProductName %></p>
+                        <p>Description: <%= orders.Description %></p>
+                        <p>Company Name: <%= orders.CompanyName %></p>
+                        <p>Address: <%= orders.Address%></p>
+                        <p>Quantity: <%= orders.Quantity %></p>
+                        <% if(orders.PurchasePoints != null) { %>
+                            <p>Points earnt with this purchase is <%= orders.PurchasePoints %>.</p>
+                        <% } %>
+                        <% if(orders.OrderDate != null) { %>
+                            <p>Order Date: <%= orders.OrderDate %></p>
+                        <% } %>
+                        <% if(orders.ShippingDate != null) { %>
+
+                            <p>Date of shipping: <%= orders.ShippingDate %></p>
+                        <% } %>
+                        <% if(orders.DeliveryDate != null) { %>
+                            <p>Date of Delivery: <%= orders.DeliveryDate %></p>
+                        <% } %>
+
+                        <% if(orders.Comments != null) { %>
+                            <p>Comments: <%= orders.Comments %></p>
+                        <% } %>
+
+                        <h2>Status: <%= orders.Status.toUpperCase() %></h2>
+                        
+                        <p></p>
+                    </div>
+                </a>
+                
+            <% }) %>
+        <% }else { %>
+            <p>No orders</p>
+        <% } %>
+        <%- include('./partials/footer.ejs') %>
+    </body>
+
+</html>

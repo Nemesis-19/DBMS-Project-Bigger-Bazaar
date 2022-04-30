@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs') %>
+    <body>
+        <div class = "userInfo">
+            <h1 class = "customer_name"><%= user[0].CustomerName %></h1>
+            <p>DOB: <%= user[0].DateOfBirth %></p>
+            <p>PhoneNumber: <%= user[0].Mobile %></p>
+            <p>EmailID: <%= user[0].EmailID %></p>
+            <p style="color: rgb(24, 27, 192); ">Membership Type: <%= user[0].Membership.toUpperCase() %></p>
+        </div>
+
+        <div>
+            <p>You have <%= PurchasePoints[0].PurchasePoints %> left. </p>
+        </div>
+
+
+
+
+        <div class = "card_details">
+            
+            <% if(pay.length > 0) { %>
+                <h1>Saved card details</h1>
+                <% pay.forEach(pay => { %>
+                    <div class = "card_details">
+                        <% if ( pay.NameOnCard != null) { %>
+                            <p>Name on Card: <%= pay.NameOnCard %></p>
+                        <% } %>
+                        <% if ( pay.TypeOfCard != null) { %>
+                            <p>Card type: <%= pay.TypeOfCard %></p>
+                        <% } %>
+                        <% if ( pay.CreditCard != null) { %>
+                            <p>Credit Card Number: <%= pay.CreditCard %></p>
+                        <% } %>
+                        <% if ( pay.DebitCard != null) { %>
+                            <p>Credit Card Number: <%= pay.DebitCard %></p>
+                        <% } %>
+                    </div>
+                <% }) %>
+            <% } %>
+
+            
+
+        </div>
+
+
+
+        <%- include('./partials/footer.ejs') %>
+    </body>
+
+</html>

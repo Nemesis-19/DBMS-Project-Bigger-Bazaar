@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <div class = "details">
+        <% if(product.length > 0){ %>
+            <% product.forEach( product => { %>
+                <h1 class = "productName" ><%= product.ProductName %></h1>
+                <p>Product Type: <%= product.ProductType %></p>
+                <p>Description: <%= product.Description %></p>
+                <% if(product.CompanyName != null){ %>
+                    <p>Company: <%= product.CompanyName %></p>
+                <% } %>
+                <p>Cost: <%= product.Price %></p>
+                <% if(product.DealID != null){ %>
+                    <p>Deal ID: <%= product.DealID %></p>
+                <% }else{ %>
+                    <p>No deals on this product currently.</p>
+                <% } %>
+            <% }) %>
+        <% }else { %>
+            <p>No products</p>
+        <% } %>
+    </div>
+    
+    <div class = "deal">
+        <% if(deal.length > 0){ %>
+            <% deal.forEach( deal => { %>
+                <p class = "membership-type">Membership: <%= deal.Membership%></p>
+                <p class = "date">Deal valid till: <%= deal.Offer_Date.getDate() %>/ 
+                    <%= deal.Offer_Date.getMonth() %>/ <%= deal.Offer_Date.getFullYear() %></p>
+            <% }) %>
+        <% }else { %>
+            <p>No deals</p>
+        <% } %>
+    </div>
+
+    
+    <div class = "details">
+        <% if(details.length > 0){ %>
+            <% details.forEach( detail => { %>
+                <% if(pType == "groceries") { %>
+                    <p class = "pType">Weight: <%= detail.Weight %></p>
+                    <p class = "pType">Expiary Date: <%= detail.ExpiryDate %></p>
+
+                <% }else if(pType == "electronics") { %>
+                    <p class = "pType">EfficiencyRating: <%= detail.EfficiencyRating %></p>
+                    <p class = "pType">Waranty form the company side: <%= detail.Warranty %></p>
+                <% }else if(pType == "clothing") { %>
+                    <p class = "pType"><%= detail.Size %> <%= detail.Fabric %> <%= detail.Type %> for <%= detail.Gender %> </p>
+                <% } %>
+            <% }) %>
+        <% }else { %>
+            <p>There are no details for this product...</p>
+        <% } %>
+    </div>
+
+    <div class = "wishl" style="margin-left: 50px;">
+        <a href="/verifying/<%= product[0].ProductID %>"><button>Add to wishlist</button></a>
+    </div>
+
+</body>
+
+
+
+</html>

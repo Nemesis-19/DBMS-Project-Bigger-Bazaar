@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs') %>
+    <body>
+        <h1>Home Page</h1>
+    
+        <head>
+            <!-- <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+            <title>Product List</title>
+        </head>
+    
+        <h2>Products List</h2>
+        <hr>
+        <Table border=2px bgcolor="white" height=100 width=1470px>
+            <tr align="center">
+                <th width="33%">
+                    <a href="/groceries">
+                        Groceries
+                    </a>
+                </th>
+                <th width="34%">
+                    <a href="/clothing">
+                        Clothing
+                    </a>
+                </th>
+                <th width="33%">
+                    <a href="/electronics">
+                        Electronics
+                    </a>
+                </th>
+            </tr>
+        </Table>
+        <hr>
+        <div id="leftbox">
+            <ul>
+                <% var products=[ { id: 1, name: 'Deal 1' , price: '$100' , description: 'This is the first product' }, { id:
+                    2, name: 'Deal 2' , price: '$200' , description: 'This is the second product' }, { id: 3,
+                        name: 'Deal 3' , price: '$300' , description: 'This is the third product' } ]; %>
+                <% products.forEach(function(product) { %>
+                    <li>
+                        <a href="/deals">
+                            <h3>
+                                <%= product.name %>
+                            </h3>
+                        </a>
+                        <p>
+                            <%= product.price %>
+                        </p>
+                        <p>
+                            <%= product.description %>
+                        </p>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+        <div id="middlebox">
+            <ul>
+                <% var products=[ { id: 1, name: 'Deal 1' , price: '$100' , description: 'This is the first product' }, { id:
+                    2, name: 'Deal 2' , price: '$200' , description: 'This is the second product' }, { id: 3,
+                        name: 'Deal 3' , price: '$300' , description: 'This is the third product' } ]; %>
+                <% products.forEach(function(product) { %>
+                    <li>
+                        <a href="/deals">
+                            <h3>
+                                <%= product.name %>
+                            </h3>
+                        </a>
+                        <p>
+                            <%= product.price %>
+                        </p>
+                        <p>
+                            <%= product.description %>
+                        </p>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+        <div id="rightbox">
+            <ul>
+                <% var products=[ { id: 1, name: 'Deal 1' , price: '$100' , description: 'This is the first product' }, { id:
+                    2, name: 'Deal 2' , price: '$200' , description: 'This is the second product' }, { id: 3,
+                        name: 'Deal 3' , price: '$300' , description: 'This is the third product' } ]; %>
+                <% products.forEach(function(product) { %>
+                    <li>
+                        <a href="/deals">
+                            <h3>
+                                <%= product.name %>
+                            </h3>
+                        </a>
+                        <p>
+                            <%= product.price %>
+                        </p>
+                        <p>
+                            <%= product.description %>
+                        </p>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+        
+
+        
+        <%
+            var products = [
+                {
+                    id: 1,
+                    name: 'Product 1',
+                    price: '$100',
+                    description: 'This is the first product'
+                },
+                {
+                    id: 2,
+                    name: 'Product 2',
+                    price: '$200',
+                    description: 'This is the second product'
+                },
+                {
+                    id: 3,
+                    name: 'Product 3',
+                    price: '$300',
+                    description: 'This is the third product'
+                }
+            ];
+        %>
+
+        <% products.forEach(function(product) { %>
+            <div>
+                <h3><%= product.name %></h3>
+                <p><%= product.price %></p>
+                <p><%= product.description %></p>
+            </div>
+        <% }); %>
+
+        <section class = "deals">
+            <h2>Deals of the day</h2>
+            <div class="deal">
+                <h3>Deal 1</h3>
+                <p>This is the first deal</p>
+            </div>
+            <div class="deal">
+                <h3>Deal 2</h3>
+                <p>This is the second deal</p>
+            </div>
+            <div class="deal">
+                <h3>Deal 3</h3>
+                <p>This is the third deal</p>
+            </div>
+
+        </section>
+
+        <section class="wishlist">
+            <h2>Wishlist</h2>
+            <div class="wish">
+                <h3>Wish 1</h3>
+                <p>This is the first wish</p>
+            </div>
+            <div class="wish">
+                <h3>Wish 2</h3>
+                <p>This is the second wish</p>
+            </div>
+            <div class="wish">
+                <h3>Wish 3</h3>
+                <p>This is the third wish</p>
+            </div>
+        </section>
+
+        <section class = "bestsellers">
+            <h2>Bestsellers</h2>
+            <div class="bestseller">
+                <h3>Bestseller 1</h3>
+                <p>This is the first bestseller</p>
+            </div>
+            <div class="bestseller">
+                <h3>Bestseller 2</h3>
+                <p>This is the second bestseller</p>
+            </div>
+            <div class="bestseller">
+                <h3>Bestseller 3</h3>
+                <p>This is the third bestseller</p>
+            </div>
+        </section>
+
+        <section class="newarrivals">
+            <h2>New Arrivals</h2>
+            <div class="newarrival">
+                <h3>New Arrival 1</h3>
+                <p>This is the first new arrival</p>
+            </div>
+            <div class="newarrival">
+                <h3>New Arrival 2</h3>
+                <p>This is the second new arrival</p>
+            </div>
+            <div class="newarrival">
+                <h3>New Arrival 3</h3>
+                <p>This is the third new arrival</p>
+            </div>
+        </section>
+        
+        <% if(result.length > 0){ %>
+            <% result.forEach( result => { %>
+                <a class="product" href="/<%= result.ProductID %>">
+                    <div class = "product">
+                        <h3 class = "productName"><%= result.ProductName %></h3>
+                        <!-- <img src="<%= result.Image %>" alt="<%= result.ProductName %>"> -->
+                        <p>Product type: <%= result.ProductType %></p>
+                        <p>Description: <%= result.Description %></p>
+                        <% if(result.CompanyName != null){ %>
+                            <p>Company: <%= result.CompanyName %></p>
+                        <% } %>
+                        <p class = "price">Cost: ₹ <%= result.Price %></p>
+                    </div>
+                </a>
+                
+            <% }) %>
+        <% }else { %>
+            <p>No results</p>
+        <% } %>
+
+        <div class="faq">
+        <h1>Frequently asked Questions</h1>
+        <% if(faq.length > 0) { %>
+            <% faq.forEach(faq => { %>
+                <h3 class = "Question"><%= faq.Question %></h3>
+                <p class = "Answer"><%= faq.Answer %></p>
+            <% }) %>
+        <% } %>
+    </div>
+
+
+
+        <%- include('./partials/footer.ejs') %>
+    </body>
+
+</html>

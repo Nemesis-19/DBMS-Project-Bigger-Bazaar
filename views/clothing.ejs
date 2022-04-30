@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+    <head>
+        <!-- <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <title>Clothing</title>
+    </head>
+
+    <body>
+        <h2>
+            Clothing Products :
+        </h2>
+        <hr>
+        <!-- <ul>
+            <% var products=[ { id: 1, name: 'Product 1' , price: '$100' , description: 'This is the first product' }, {
+                id: 2, name: 'Product 2' , price: '$200' , description: 'This is the second product' }, { id: 3,
+                name: 'Product 3' , price: '$300' , description: 'This is the third product' } ]; %>
+                <% products.forEach(function(product) { %>
+                    <li>
+                        <h3>
+                            <%= product.name %>
+                        </h3>
+                        <p>
+                            <%= product.price %>
+                        </p>
+                        <p>
+                            <%= product.description %>
+                        </p>
+                        <label for="quantity">Quantity (1-100):</label>
+
+                        <input type="number" id="quantity" name="quantity" min="1" max="100">
+                        <button>
+                            <a href="/wishlist">
+                                Add To Wishlist
+                            </a>
+                        </button>
+                    </li>
+                    <% }); %>
+        </ul> -->
+        <ul>
+            <% if(result.length> 0){ %>
+                <% result.forEach( result=> { %>
+                    <li>
+                        <h3>Product Name: <%= result.ProductName.substring(13) %>
+                        </h3>
+                        <p>Product type: <%= result.Type %>
+                        </p>
+                        <p>Size: <%= result.Size %>
+                        </p>
+                        <p>Fabric: <%= result.Fabric %>
+                        </p>
+                        <p>Gender: <%= result.Gender %>
+                        </p>
+                        <p>Age Group: <%= result.AgeGroup %>
+                        </p>    
+                        <p>Price: <%= result.Price %>
+                        </p>
+                        <label for="quantity">Quantity (1-100):</label>
+
+                        <input type="number" id="quantity" name="quantity" min="1" max="100">
+                        <button>
+                            <a href="/wishlist">
+                                Add To Wishlist
+                            </a>
+                        </button>
+                    </li>
+                    <% }) %>
+                        <% }else { %>
+                            <p>No results</p>
+                            <% } %>
+        </ul>
+    </body>
+
+</html>
